@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="guestlist" tabindex="-1" role="dialog" aria-labelledby="guestlist">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="guestlist">Guestlist</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Coming With</th>
+              <th>RSVPd At</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @guests.each do |guest| %>
+            <tr>
+              <td><%= guest.name %></td>
+              <td><%= guest.email %></td>
+              <td><%= guest.comingwith %></td>
+              <td><%= guest.created_at %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

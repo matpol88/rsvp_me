@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1><%= @event.name %> <small>by <%= @event.user.name %></small></h1>
+  <p class="lead"><%= @event.description %></p>
+  <p><b>From</b> <%= @event.event_time.to_formatted_s(:short) %> <b>to</b> <%= @event.to_event_time.to_formatted_s(:short) %> <b>at</b> <%= @event.location %></p>
+  <p><a class="btn btn-lg btn-success" data-toggle="modal" data-target="#rsvp">RSVP</a>
+  	<a class="btn btn-lg btn-info" data-toggle="modal" data-target="#guestlist">View Guestlist (<%= @guest_count %>)</a></p>
+</div>
+
+<%= render "events/rsvp" %>
+<%= render "events/guestlist" %>
